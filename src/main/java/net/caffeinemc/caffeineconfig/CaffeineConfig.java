@@ -48,8 +48,8 @@ public final class CaffeineConfig {
      */
     public static CaffeineConfig.Builder builder(String modName) {
         CaffeineConfig config = new CaffeineConfig(modName);
-        config.logger = LogManager.getLogger(modName + "Config");
-        String jsonKey = modName.toLowerCase() + ":options";
+        config.logger = LogManager.getLogger(modName + " Config");
+        String jsonKey = modName.toLowerCase().replace(" ", "-") + ":options";
         return config.new Builder().withSettingsKey(jsonKey);
     }
 
